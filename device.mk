@@ -13,9 +13,9 @@
 # limitations under the License.
 
 PRODUCT_COPY_FILES := \
-    device/linaro/snowball/vold.fstab:system/etc/vold.fstab \
-    device/linaro/snowball/egl.cfg:system/lib/egl/egl.cfg
+    device/linaro/vexpress_a9/vold.fstab:system/etc/vold.fstab \
+    device/linaro/vexpress_a9/egl.cfg:system/lib/egl/egl.cfg
 
 PRODUCT_COPY_FILES += \
-        device/linaro/snowball/init.st-ericsson.rc:root/init.st-ericsson.rc \
-        device/linaro/snowball/ueventd.st-ericsson.rc:root/ueventd.st-ericsson.rc
+        device/linaro/vexpress_a9/init.arm.rc:root/init.arm.rc \
+        device/linaro/vexpress_a9/ueventd.arm.rc:root/ueventd.arm.rc

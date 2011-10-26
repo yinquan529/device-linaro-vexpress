@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/snowball.mk
+	$(LOCAL_DIR)/vexpress_a9.mk

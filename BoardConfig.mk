@@ -3,12 +3,12 @@
 # Product-specific compile-time definitions.
 #
 
-TARGET_BOARD_PLATFORM := snowball 
+TARGET_BOARD_PLATFORM := vexpress_a9
 TARGET_NO_BOOTLOADER := true # Uses u-boot instead 
 TARGET_NO_KERNEL := false
-KERNEL_CONFIG := u8500_snowball_android_defconfig
+KERNEL_CONFIG := android_vexpress_a9_defconfig
 TARGET_USE_UBOOT := true
-UBOOT_CONFIG := u8500_snowball_config
+UBOOT_CONFIG := vexpress_ca9x4_config
 TARGET_USE_XLOADER := false
 TARGET_NO_RECOVERY := true
 TARGET_NO_RADIOIMAGE := true
@@ -51,6 +51,6 @@ TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 # bootargs
 BOARD_KERNEL_CMDLINE := omapdss.def_disp=hdmi consoleblank=0
 
-# Snowball uses a Nova A9500 -- Dual-Core Cortex A9
+# Dual-Core Cortex A9
 TARGET_CPU_SMP := true
 TARGET_EXTRA_CFLAGS += -mtune=cortex-a9 -mcpu=cortex-a9
