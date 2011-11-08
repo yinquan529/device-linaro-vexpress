@@ -17,5 +17,5 @@ PRODUCT_COPY_FILES := \
     device/linaro/vexpress_a9/egl.cfg:system/lib/egl/egl.cfg
 
 PRODUCT_COPY_FILES += \
-        device/linaro/vexpress_a9/init.arm.rc:root/init.arm.rc \
-        device/linaro/vexpress_a9/ueventd.arm.rc:root/ueventd.arm.rc
+        device/linaro/vexpress_a9/init.arm-versatile.rc:root/init.arm-versatile.rc \
+        device/linaro/vexpress_a9/ueventd.arm-versatile.rc:root/ueventd.arm-versatile.rc
