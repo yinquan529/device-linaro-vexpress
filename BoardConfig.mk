@@ -15,7 +15,6 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_PROVIDES_INIT_RC := true
 BOARD_USES_GENERIC_AUDIO := true
 BOARD_USES_ALSA_AUDIO := false
-OMAP_ENHANCEMENT := true
 HARDWARE_OMX := false
 USE_CAMERA_STUB := false
 
@@ -35,7 +34,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 
 # bootargs
-BOARD_KERNEL_CMDLINE := omapdss.def_disp=hdmi consoleblank=0
+BOARD_KERNEL_CMDLINE := mem=1024M clcd=xvga consoleblank=0 mmci.fmax=4000000
 
 # Dual-Core Cortex A9
 TARGET_CPU_SMP := true
