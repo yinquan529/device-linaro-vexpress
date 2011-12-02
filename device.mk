@@ -1,21 +1,11 @@
-# Copyright (C) 2011 Linaro Limited
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 PRODUCT_COPY_FILES := \
     device/linaro/vexpress_a9/vold.fstab:system/etc/vold.fstab \
     device/linaro/vexpress_a9/egl.cfg:system/lib/egl/egl.cfg
 
 PRODUCT_COPY_FILES += \
-        device/linaro/vexpress_a9/init.arm-versatile.rc:root/init.arm-versatile.rc \
-        device/linaro/vexpress_a9/ueventd.arm-versatile.rc:root/ueventd.arm-versatile.rc
+    device/linaro/common/init.rc:root/init.rc \
+    device/linaro/vexpress_a9/init.arm-versatile.rc:root/init.arm-versatile.rc \
+    device/linaro/vexpress_a9/init.vexpress_a9.sh:system/etc/init.vexpress_a9.sh \
+    device/linaro/vexpress_a9/initlogo.rle:root/initlogo.rle
+
+PRODUCT_CHARACTERISTICS := tablet,nosdcard

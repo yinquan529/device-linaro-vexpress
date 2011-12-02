@@ -19,7 +19,6 @@ HARDWARE_OMX := false
 USE_CAMERA_STUB := false
 
 BOARD_HAVE_BLUETOOTH := false
-BOARD_HAVE_BLUETOOTH_BCM := false
 
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -38,7 +37,7 @@ BOARD_KERNEL_CMDLINE := mem=1024M clcd=xvga consoleblank=0 mmci.fmax=4000000
 
 # Dual-Core Cortex A9
 TARGET_CPU_SMP := true
-TARGET_EXTRA_CFLAGS += -mtune=cortex-a9 -mcpu=cortex-a9
+#TARGET_EXTRA_CFLAGS += -mtune=cortex-a9 -mcpu=cortex-a9
 
 # ARMs gator (DS-5)
 TARGET_USE_GATOR:= true
