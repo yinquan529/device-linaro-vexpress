@@ -53,12 +53,14 @@ on boot
     insmod /system/modules/gator.ko
 
 service faketsd /system/bin/faketsd
+    class main
     user bluetooth
     group bluetooth
     oneshot
 
 #userspace daemon needed for gator
 service gatord /system/bin/gatord
+    class main
     user root
     oneshot
 
