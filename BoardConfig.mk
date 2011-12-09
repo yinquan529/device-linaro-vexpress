@@ -37,7 +37,7 @@ BOARD_KERNEL_CMDLINE := mem=1024M clcd=xvga consoleblank=0 mmci.fmax=4000000
 
 # Dual-Core Cortex A9
 TARGET_CPU_SMP := true
-#TARGET_EXTRA_CFLAGS += -mtune=cortex-a9 -mcpu=cortex-a9
+TARGET_EXTRA_CFLAGS += $(call cc-option,-mtune=cortex-a9,$(call cc-option,-mtune=cortex-a8)) $(call cc-option,-mcpu=cortex-a9,$(call cc-option,-mcpu=cortex-a8))
 
 # ARMs gator (DS-5)
 TARGET_USE_GATOR:= true
