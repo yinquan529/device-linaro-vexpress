@@ -6,7 +6,8 @@ PRODUCT_COPY_FILES += \
     device/linaro/common/init.rc:root/init.rc \
     device/linaro/vexpress_a9/init.arm-versatileexpress.rc:root/init.arm-versatileexpress.rc \
     device/linaro/vexpress_a9/init.vexpress_a9.sh:system/etc/init.vexpress_a9.sh \
-    device/linaro/vexpress_a9/initlogo.rle:root/initlogo.rle
+    device/linaro/vexpress_a9/initlogo.rle:root/initlogo.rle \
+    device/linaro/common/wallpaper_info.xml:data/system/wallpaper_info.xml
 
 PRODUCT_CHARACTERISTICS := tablet,nosdcard
 
