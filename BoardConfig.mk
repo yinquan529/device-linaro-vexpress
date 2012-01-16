@@ -35,7 +35,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_SPARSE_EXT_DISABLED := true
 
 # bootargs
-BOARD_KERNEL_CMDLINE := mem=1024M clcd=xvga consoleblank=0 mmci.fmax=4000000
+BOARD_KERNEL_CMDLINE := mmci.fmax=4000000
 
 # Dual-Core Cortex A9
 TARGET_CPU_SMP := true

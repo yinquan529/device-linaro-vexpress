@@ -58,9 +58,8 @@ service faketsd /system/bin/faketsd
     group bluetooth
     oneshot
 
-# hack to start networking until ICS has Ethernet Communication Manager
-# this will enable use of ADB and gator without further manual
-# intervention, it does not let UI apps like the web browser work
+# hack to start networking early during boot, this will enable use of
+# ADB and gator without further manual intervention
 service netcfghack /system/bin/netcfg eth0 dhcp
     class main
     user root
