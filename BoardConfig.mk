@@ -11,6 +11,7 @@ TARGET_USE_UBOOT := true
 UBOOT_CONFIG := vexpress_ca9x4_config
 UBOOT_FLAVOURS := vexpress_ca9x4:u-boot_v2p-ca9.bin vexpress_ca5x2:u-boot_v2p-ca5s.bin vexpress_ca15x2:u-boot_v2p-ca15-tc1.bin
 DEVICE_TREES := vexpress-v2p-ca5s:v2p-ca5s.dtb vexpress-v2p-ca9:v2p-ca9.dtb vexpress-v2p-ca15-tc1:v2p-ca15-tc1.dtb
+CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress_a9/uefi.mk
 TARGET_USE_XLOADER := false
 TARGET_NO_RECOVERY := true
 TARGET_NO_RADIOIMAGE := true
