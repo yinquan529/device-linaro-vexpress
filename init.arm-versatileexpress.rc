@@ -50,8 +50,6 @@ on boot
     chown system system /sys/class/graphics/fb0/fit_to_screen
     chown system system /sys/class/graphics/fb1/overlays
 
-    insmod /system/modules/gator.ko
-
 service faketsd /system/bin/faketsd
     class main
     user bluetooth
@@ -64,10 +62,3 @@ service netcfghack /system/bin/netcfg eth0 dhcp
     class main
     user root
     oneshot
-
-#userspace daemon needed for gator
-service gatord /system/bin/gatord
-    class main
-    user root
-
-
