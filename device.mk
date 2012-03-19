@@ -3,7 +3,6 @@ PRODUCT_COPY_FILES := \
     device/linaro/vexpress_a9/egl.cfg:system/lib/egl/egl.cfg
 
 PRODUCT_COPY_FILES += \
-    system/core/rootdir/init.rc:root/init.rc \
     device/linaro/vexpress_a9/init.arm-versatileexpress.rc:root/init.arm-versatileexpress.rc \
     device/linaro/vexpress_a9/init.vexpress_a9.sh:system/etc/init.vexpress_a9.sh \
     device/linaro/vexpress_a9/initlogo.rle:root/initlogo.rle
