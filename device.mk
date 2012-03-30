@@ -1,12 +1,12 @@
 PRODUCT_COPY_FILES := \
     device/linaro/common/init.partitions.rc:root/init.partitions.rc \
-    device/linaro/vexpress_a9/vold.fstab:system/etc/vold.fstab \
-    device/linaro/vexpress_a9/egl.cfg:system/lib/egl/egl.cfg
+    device/linaro/vexpress/vold.fstab:system/etc/vold.fstab \
+    device/linaro/vexpress/egl.cfg:system/lib/egl/egl.cfg
 
 PRODUCT_COPY_FILES += \
-    device/linaro/vexpress_a9/init.arm-versatileexpress.rc:root/init.arm-versatileexpress.rc \
-    device/linaro/vexpress_a9/init.vexpress_a9.sh:system/etc/init.vexpress_a9.sh \
-    device/linaro/vexpress_a9/initlogo.rle:root/initlogo.rle
+    device/linaro/vexpress/init.arm-versatileexpress.rc:root/init.arm-versatileexpress.rc \
+    device/linaro/vexpress/init.vexpress.sh:system/etc/init.vexpress.sh \
+    device/linaro/vexpress/initlogo.rle:root/initlogo.rle
 
 PRODUCT_CHARACTERISTICS := tablet,nosdcard
 

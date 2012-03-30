@@ -1,1 +1,1 @@
-add_lunch_combo vexpress_a9-eng
+add_lunch_combo vexpress-eng
