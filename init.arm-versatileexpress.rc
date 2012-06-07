@@ -37,11 +37,6 @@ on boot
     #change permissions for alsa nodes for HDMI
     chmod 777  /dev/snd/pcmC0D7p
 
-    # change permissions for Overlay
-    chown system system /dev/video1
-    chown system system /dev/video2
-    chown system system /dev/video3
-
     # Revert the boost_timeout to the default value of 3 sec. Note this won't affect the prev boost
     # request for boot time reduction
     # write /sys/devices/system/cpu/cpufreq/hotplug/boost_timeout 3000000
