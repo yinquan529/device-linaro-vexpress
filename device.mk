@@ -16,4 +16,4 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_PACKAGES += \
  	camera.vexpress
 
-$(call inherit-product, frameworks/base/build/tablet-dalvik-heap.mk)
+$(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)

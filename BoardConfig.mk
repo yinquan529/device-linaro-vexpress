@@ -43,3 +43,6 @@ TARGET_CPU_SMP := true
 
 # ARMs gator (DS-5)
 TARGET_USE_GATOR:= true
+
+# Build uImage and uInitrd instead of kernel and ramdisk.img
+TARGET_BOOTLOADER_TYPE := uboot
