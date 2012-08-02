@@ -13,7 +13,4 @@ PRODUCT_CHARACTERISTICS := tablet,nosdcard
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-PRODUCT_PACKAGES += \
- 	camera.vexpress
-
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
