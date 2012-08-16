@@ -6,7 +6,9 @@
 TARGET_BOARD_PLATFORM := vexpress
 TARGET_NO_BOOTLOADER := true # Uses u-boot instead 
 TARGET_NO_KERNEL := false
-KERNEL_CONFIG := android_vexpress_defconfig
+KERNEL_CONFIG := linaro/configs/linaro-base.conf \
+                 linaro/configs/android.conf \
+                 linaro/configs/vexpress.conf
 TARGET_USE_UBOOT := true
 UBOOT_CONFIG := vexpress_ca9x4_config
 UBOOT_FLAVOURS := vexpress_ca9x4:u-boot_v2p-ca9.bin vexpress_ca5x2:u-boot_v2p-ca5s.bin vexpress_ca15x2:u-boot_v2p-ca15-tc1.bin
