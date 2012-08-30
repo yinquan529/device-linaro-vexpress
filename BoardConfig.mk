@@ -12,7 +12,14 @@ KERNEL_CONFIG := linaro/configs/linaro-base.conf \
 TARGET_USE_UBOOT := true
 UBOOT_CONFIG := vexpress_ca9x4_config
 UBOOT_FLAVOURS := vexpress_ca9x4:u-boot_v2p-ca9.bin vexpress_ca5x2:u-boot_v2p-ca5s.bin vexpress_ca15x2:u-boot_v2p-ca15-tc1.bin
-DEVICE_TREES := vexpress-v2p-ca5s:v2p-ca5s.dtb vexpress-v2p-ca9:v2p-ca9.dtb vexpress-v2p-ca15-tc1:v2p-ca15-tc1.dtb vexpress-v2p-ca15-tc2:v2p-ca15-tc2.dtb
+DEVICE_TREES := vexpress-v2p-ca5s:v2p-ca5s.dtb vexpress-v2p-ca9:v2p-ca9.dtb vexpress-v2p-ca15-tc1:v2p-ca15-tc1.dtb vexpress-v2p-ca15-tc2:v2p-ca15-tc2.dtb \
+		rtsm_ve-cortex_a9x2:rtsm/rtsm_ve-ca9x2.dtb \
+		rtsm_ve-cortex_a9x4:rtsm/rtsm_ve-ca9x4.dtb \
+		rtsm_ve-cortex_a15x1:rtsm/rtsm_ve-ca15x1.dtb \
+		rtsm_ve-cortex_a15x2:rtsm/rtsm_ve-ca15x2.dtb \
+		rtsm_ve-cortex_a15x4:rtsm/rtsm_ve-ca15x4.dtb \
+		rtsm_ve-v2p-ca15x1-ca7x1:rtsm/rtsm_ve-ca15x1-ca7x1.dtb \
+		rtsm_ve-v2p-ca15x4-ca7x4:rtsm/rtsm_ve-ca15x1-ca7x4.dtb
 CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress/uefi.mk
 TARGET_USE_XLOADER := false
 TARGET_NO_RECOVERY := true
