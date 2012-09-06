@@ -12,4 +12,4 @@
 ## <sysfs_path> - List of sysfs paths to source devices
 ######################
 
-dev_mount sdcard /mnt/sdcard 6 /devices/mb:mmci/mmc_host/mmc0/mmc0 /devices/motherboard.2/iofpga.3/mb:mmci/mmc_host/mmc0/mmc0:dd32 /devices/motherboard.1/iofpga.2/mb:mmci/mmc_host/mmc0/mmc0:dd32
+dev_mount sdcard /mnt/sdcard 6 /block/mmcblk0/device
