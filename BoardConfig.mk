@@ -20,7 +20,7 @@ DEVICE_TREES := vexpress-v2p-ca5s:v2p-ca5s.dtb vexpress-v2p-ca9:v2p-ca9.dtb vexp
 		rtsm_ve-cortex_a15x4:rtsm/rtsm_ve-ca15x4.dtb \
 		rtsm_ve-v2p-ca15x1-ca7x1:rtsm/rtsm_ve-ca15x1-ca7x1.dtb \
 		rtsm_ve-v2p-ca15x4-ca7x4:rtsm/rtsm_ve-ca15x1-ca7x4.dtb
-CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress/uefi.mk
+CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress/bootloader.mk
 TARGET_USE_XLOADER := false
 TARGET_NO_RECOVERY := true
 TARGET_NO_RADIOIMAGE := true
