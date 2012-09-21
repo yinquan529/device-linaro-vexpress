@@ -9,6 +9,7 @@ TARGET_NO_KERNEL := false
 KERNEL_CONFIG := linaro/configs/linaro-base.conf \
                  linaro/configs/android.conf \
                  linaro/configs/vexpress.conf
+ifeq ($(wildcard $(TOP)/boot-wrapper/bootwrapper.mk),)
 TARGET_USE_UBOOT := true
 UBOOT_CONFIG := vexpress_ca9x4_config
 UBOOT_FLAVOURS := vexpress_ca9x4:u-boot_v2p-ca9.bin vexpress_ca5x2:u-boot_v2p-ca5s.bin vexpress_ca15x2:u-boot_v2p-ca15-tc1.bin
@@ -21,6 +22,12 @@ DEVICE_TREES := vexpress-v2p-ca5s:v2p-ca5s.dtb vexpress-v2p-ca9:v2p-ca9.dtb vexp
 		rtsm_ve-v2p-ca15x1-ca7x1:rtsm/rtsm_ve-ca15x1-ca7x1.dtb \
 		rtsm_ve-v2p-ca15x4-ca7x4:rtsm/rtsm_ve-ca15x4-ca7x4.dtb
 CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress/bootloader.mk
+else
+TARGET_USE_UBOOT := false
+DEVICE_TREES := rtsm_ve-v2p-ca15x1-ca7x1:rtsm/rtsm_ve-ca15x1-ca7x1.dtb \
+		rtsm_ve-v2p-ca15x4-ca7x4:rtsm/rtsm_ve-ca15x4-ca7x4.dtb
+CUSTOM_BOOTLOADER_MAKEFILE := boot-wrapper/bootwrapper.mk
+endif
 TARGET_USE_XLOADER := false
 TARGET_NO_RECOVERY := true
 TARGET_NO_RADIOIMAGE := true
@@ -53,5 +60,7 @@ TARGET_CPU_SMP := true
 # ARMs gator (DS-5)
 TARGET_USE_GATOR:= true
 
+ifeq ($(wildcard $(TOP)/boot-wrapper/bootwrapper.mk),)
 # Build uImage and uInitrd instead of kernel and ramdisk.img
 TARGET_BOOTLOADER_TYPE := uboot
+endif
