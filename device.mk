@@ -13,4 +13,9 @@ PRODUCT_CHARACTERISTICS := tablet,nosdcard
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+ifneq ($(wildcard $(TOP)/test/linaro/biglittle/sched_tests),)
+PRODUCT_PACKAGES := \
+        test_suite
+endif
+
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
