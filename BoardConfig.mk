@@ -6,6 +6,10 @@
 TARGET_BOARD_PLATFORM := vexpress
 TARGET_NO_BOOTLOADER := true # Uses u-boot instead 
 TARGET_NO_KERNEL := false
+ifeq ($(strip $(ANDROID_64)),true)
+KERNEL_CONFIG := vexpress-android_defconfig
+TARGET_USE_UBOOT := false
+else
 KERNEL_CONFIG := linaro/configs/linaro-base.conf \
                  linaro/configs/android.conf \
                  linaro/configs/vexpress.conf
@@ -27,6 +31,7 @@ TARGET_USE_UBOOT := false
 DEVICE_TREES := rtsm_ve-v2p-ca15x1-ca7x1:rtsm/rtsm_ve-ca15x1-ca7x1.dtb \
 		rtsm_ve-v2p-ca15x4-ca7x4:rtsm/rtsm_ve-ca15x4-ca7x4.dtb
 CUSTOM_BOOTLOADER_MAKEFILE := boot-wrapper/bootwrapper.mk
+endif
 endif
 TARGET_USE_XLOADER := false
 TARGET_NO_RECOVERY := true
@@ -60,7 +65,11 @@ TARGET_CPU_SMP := true
 # ARMs gator (DS-5)
 TARGET_USE_GATOR:= true
 
+ifeq ($(strip $(ANDROID_64)),true)
+TARGET_BOOTLOADER_TYPE := none
+else
 ifeq ($(wildcard $(TOP)/boot-wrapper/bootwrapper.mk),)
 # Build uImage and uInitrd instead of kernel and ramdisk.img
 TARGET_BOOTLOADER_TYPE := uboot
+endif
 endif
