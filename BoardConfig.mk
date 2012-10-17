@@ -10,6 +10,7 @@ ifeq ($(strip $(ANDROID_64)),true)
 KERNEL_TOOLS_PREFIX := aarch64-linux-gnu-
 KERNEL_CONFIG := vexpress-android_defconfig
 TARGET_USE_UBOOT := false
+CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress/bootloader64.mk
 else
 KERNEL_CONFIG := linaro/configs/linaro-base.conf \
                  linaro/configs/android.conf \
