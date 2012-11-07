@@ -20,4 +20,6 @@ PRODUCT_PACKAGES := \
         test_suite
 endif
 
+PRODUCT_PACKAGES += audio.primary.vexpress
+
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
