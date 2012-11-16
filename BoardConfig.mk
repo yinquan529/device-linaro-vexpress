@@ -14,6 +14,7 @@ CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress/bootloader64.mk
 else
 KERNEL_CONFIG := linaro/configs/linaro-base.conf \
                  linaro/configs/android.conf \
+                 linaro/configs/big-LITTLE-MP.conf \
                  linaro/configs/vexpress.conf
 ifeq ($(wildcard $(TOP)/boot-wrapper/bootwrapper.mk),)
 TARGET_USE_UBOOT := true
