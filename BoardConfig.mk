@@ -49,6 +49,7 @@ BOARD_HAVE_BLUETOOTH := false
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 
+TARGET_ARCH := arm
 # Enable NEON feature
 TARGET_ARCH_VARIANT := armv7-a-neon
 ARCH_ARM_HAVE_TLS_REGISTER := true
