@@ -1,4 +1,5 @@
 PRODUCT_COPY_FILES := \
+    device/linaro/common/fstab.partitions:root/fstab.partitions \
     device/linaro/common/init.partitions.rc:root/init.partitions.rc \
     device/linaro/vexpress/vold.fstab:system/etc/vold.fstab \
     device/linaro/vexpress/egl.cfg:system/lib/egl/egl.cfg
@@ -12,6 +13,12 @@ PRODUCT_COPY_FILES += \
     device/linaro/vexpress/initlogo.rle:root/initlogo.rle
 
 PRODUCT_CHARACTERISTICS := tablet,nosdcard
+
+DEVICE_PACKAGE_OVERLAYS := \
+    device/linaro/vexpress/overlay
+
+PRODUCT_PROPERTY_OVERRIDES += \
+        debug.sf.no_hw_vsync=1
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
