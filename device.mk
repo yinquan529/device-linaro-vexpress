@@ -17,8 +17,10 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 ifneq ($(wildcard $(TOP)/test/linaro/biglittle/sched_tests),)
 PRODUCT_PACKAGES := \
-        test_suite
+        run_sched_test
 endif
+
+$(call inherit-product-if-exists, test/linaro/biglittle/task-placement-tests/install-scripts.mk)
 
 PRODUCT_PACKAGES += audio.primary.vexpress
 
