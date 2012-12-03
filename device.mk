@@ -27,7 +27,13 @@ PRODUCT_PACKAGES := \
         run_sched_test
 endif
 
+ifneq ($(wildcard $(TOP)/test/linaro/biglittle/core/bl-agitator),)
+PRODUCT_PACKAGES := \
+        bl-agitator
+endif
+
 $(call inherit-product-if-exists, test/linaro/biglittle/task-placement-tests/install-scripts.mk)
+$(call inherit-product-if-exists, test/linaro/biglittle/core/install-scripts.mk)
 
 PRODUCT_PACKAGES += audio.primary.vexpress
 
