@@ -18,6 +18,7 @@ DEVICE_PACKAGE_OVERLAYS := \
     device/linaro/vexpress/overlay
 
 PRODUCT_PROPERTY_OVERRIDES += \
+        ro.nohardwaregfx=true \
         debug.sf.no_hw_vsync=1
 
 PRODUCT_TAGS += dalvik.gc.type-precise
