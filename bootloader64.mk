@@ -8,7 +8,7 @@ $(BOOTLOADER_OUT)/linux-system.axf: $(ACP) $(INSTALLED_KERNEL_TARGET) $(INSTALLE
 	ln -sf $(abspath $(INSTALLED_KERNEL_TARGET)) $(TOP)/boot-wrapper/Image
 	ln -sf $(abspath $(INSTALLED_RAMDISK_TARGET)) $(TOP)/boot-wrapper/filesystem.cpio.gz
 	PATH=$(abspath $(TOP)/gcc-linaro-aarch64-linux-gnu-4.7/bin):$(PATH) && \
-	$(MAKE) -C $(TOP)/boot-wrapper CROSS_COMPILE=aarch64-linux-gnu-
+	$(MAKE) -C $(TOP)/boot-wrapper CROSS_COMPILE=$(KERNEL_TOOLS_PREFIX)
 	@mkdir -p $(dir $@)
 	$(ACP) -fpt $(TOP)/boot-wrapper/linux-system.axf $@
 	rm $(TOP)/boot-wrapper/dtc
