@@ -34,7 +34,7 @@ on boot
     chown system system /sys/class/graphics/fb1/overlays
 
 # setup IRQ affinity to the A7s
-service setirqaffinity /set_irq_affinity.sh 0xc07
+service setirqaffinity /sbin/set_irq_affinity.sh 0xc07
     class main
     user root
     oneshot

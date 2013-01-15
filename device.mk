@@ -18,7 +18,7 @@ PRODUCT_COPY_FILES += \
     device/linaro/vexpress/ueventd.v2p-aarch64.rc:root/ueventd.v2p-aarch64.rc \
     device/linaro/vexpress/init.vexpress.sh:system/etc/init.vexpress.sh \
     device/linaro/vexpress/initlogo.rle:root/initlogo.rle \
-    device/linaro/vexpress/set_irq_affinity.sh:root/set_irq_affinity.sh
+    device/linaro/vexpress/set_irq_affinity.sh:root/sbin/set_irq_affinity.sh
 
 PRODUCT_CHARACTERISTICS := tablet,nosdcard
 
