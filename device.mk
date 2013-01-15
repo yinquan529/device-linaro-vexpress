@@ -46,4 +46,6 @@ $(call inherit-product-if-exists, test/linaro/biglittle/core/install-scripts.mk)
 
 PRODUCT_PACKAGES += audio.primary.vexpress
 
+PRODUCT_PACKAGES += ashmemtest
+
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
