@@ -1,12 +1,5 @@
-ifeq ($(BUILD_IKS),true)
 PRODUCT_COPY_FILES := \
-    device/linaro/vexpress/fstab.partitions.usb:root/fstab.partitions
-else
-PRODUCT_COPY_FILES := \
-    device/linaro/common/fstab.partitions:root/fstab.partitions
-endif
-
-PRODUCT_COPY_FILES += \
+    device/linaro/common/fstab.partitions:root/fstab.partitions \
     device/linaro/common/init.partitions.rc:root/init.partitions.rc \
     device/linaro/vexpress/vold.fstab:system/etc/vold.fstab \
     device/linaro/vexpress/egl.cfg:system/lib/egl/egl.cfg
