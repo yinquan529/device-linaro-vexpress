@@ -33,6 +33,14 @@ on boot
     chown system system /sys/class/graphics/fb0/fit_to_screen
     chown system system /sys/class/graphics/fb1/overlays
 
+    # Lets see if following changes speed up things on RTSM
+    setprop ro.test_harness true
+    # See http://www.netmite.com/android/mydroid/2.0/dalvik/docs/embedded-vm-contro
+    # Disable verification, should speed things up
+    setprop dalvik.vm.dexopt-flags v=n
+    # Disable extended JNI checks, should speed things up
+    setprop dalvik.vm.checkjni false
+
 service faketsd /system/bin/faketsd
     class main
     user bluetooth
