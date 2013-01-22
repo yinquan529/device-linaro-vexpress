@@ -6,6 +6,7 @@
 TARGET_BOARD_PLATFORM := vexpress
 TARGET_NO_BOOTLOADER := true # Uses u-boot instead 
 TARGET_NO_KERNEL := false
+TARGET_HWPACK_CONFIG := device/linaro/vexpress/config
 ifeq ($(strip $(ANDROID_64)),true)
 KERNEL_TOOLS_PREFIX := aarch64-linux-android-
 KERNEL_CONFIG := vexpress-android_defconfig
