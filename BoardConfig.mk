@@ -45,7 +45,7 @@ else
 KERNEL_CONFIG := vexpress_bL_defconfig
 TARGET_USE_UBOOT := true
 UBOOT_CONFIG := vexpress_ca5x2
-DEVICE_TREES := vexpress-v2p-ca15-tc2:vexpress-v2p-ca15-tc2.dtb
+DEVICE_TREES := vexpress-v2p-ca15-tc2:v2p-ca15-tc2.dtb
 endif
 endif
 TARGET_USE_XLOADER := false
