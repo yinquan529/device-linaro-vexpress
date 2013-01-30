@@ -42,7 +42,9 @@ DEVICE_TREES := rtsm_ve-v2p-ca15x1-ca7x1:rtsm/rtsm_ve-ca15x1-ca7x1.dtb \
 CUSTOM_BOOTLOADER_MAKEFILE := boot-wrapper/bootwrapper.mk
 endif
 else
+ifeq ($(KERNEL_CONFIG),)
 KERNEL_CONFIG := vexpress_bL_defconfig
+endif
 TARGET_USE_UBOOT := true
 UBOOT_CONFIG := vexpress_ca5x2
 DEVICE_TREES := vexpress-v2p-ca15-tc2:v2p-ca15-tc2.dtb
