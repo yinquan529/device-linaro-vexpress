@@ -1,6 +1,5 @@
 PRODUCT_COPY_FILES := \
     device/linaro/common/fstab.partitions:root/fstab.partitions \
-    device/linaro/common/init.partitions.rc:root/init.partitions.rc \
     device/linaro/vexpress/vold.fstab:system/etc/vold.fstab \
     device/linaro/vexpress/egl.cfg:system/lib/egl/egl.cfg
 
