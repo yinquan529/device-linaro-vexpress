@@ -38,7 +38,7 @@ on boot
     chown system system /sys/class/graphics/fb1/overlays
 
 on fs
-    mount_all /fstab.partitions
+    mount_all /fstab.arm-versatileexpress
 
 # setup IRQ affinity to the A7s
 service setirqaffinity /sbin/set_irq_affinity.sh 0xc07
