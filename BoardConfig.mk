@@ -4,7 +4,7 @@
 #
 
 TARGET_BOARD_PLATFORM := vexpress
-TARGET_NO_BOOTLOADER := true # Uses u-boot instead 
+TARGET_NO_BOOTLOADER := true # We use our own methods for building bootloaders
 TARGET_NO_KERNEL := false
 TARGET_HWPACK_CONFIG := device/linaro/vexpress/config
 ifeq ($(strip $(ANDROID_64)),true)
@@ -22,7 +22,7 @@ KERNEL_CONFIG := linaro/configs/linaro-base.conf \
                  linaro/configs/big-LITTLE-MP.conf \
                  linaro/configs/vexpress.conf
 ifeq ($(wildcard $(TOP)/boot-wrapper/bootwrapper.mk),)
-TARGET_USE_UBOOT := true
+TARGET_USE_UBOOT := false
 UBOOT_CONFIG := vexpress_ca9x4_config
 UBOOT_FLAVOURS := vexpress_ca9x4:u-boot_v2p-ca9.bin vexpress_ca5x2:u-boot_v2p-ca5s.bin vexpress_ca15x2:u-boot_v2p-ca15-tc1.bin
 DEVICE_TREES := vexpress-v2p-ca5s:v2p-ca5s.dtb vexpress-v2p-ca9:v2p-ca9.dtb vexpress-v2p-ca15-tc1:v2p-ca15-tc1.dtb vexpress-v2p-ca15-tc2:v2p-ca15-tc2.dtb \
@@ -87,7 +87,9 @@ ifeq ($(strip $(ANDROID_64)),true)
 TARGET_BOOTLOADER_TYPE := none
 else
 ifeq ($(wildcard $(TOP)/boot-wrapper/bootwrapper.mk),)
-# Build uImage and uInitrd instead of kernel and ramdisk.img
-TARGET_BOOTLOADER_TYPE := uboot
+TARGET_BOOTLOADER_TYPE := none
+INSTALLED_KERNEL_TARGET_NAME := zImage
+INSTALLED_RAMDISK_TARGET_NAME := initrd
+MAKE_UIMAGE_AND_UINITRD := true # For compatibility during transition to zImage
 endif
 endif
