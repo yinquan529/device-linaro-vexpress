@@ -1,5 +1,6 @@
 PRODUCT_COPY_FILES := \
     device/linaro/common/fstab.partitions:root/fstab.arm-versatileexpress \
+    device/linaro/common/fstab.partitions:root/fstab.v2p-aarch64 \
     device/linaro/vexpress/vold.fstab:system/etc/vold.fstab \
     device/linaro/vexpress/egl.cfg:system/lib/egl/egl.cfg
 
@@ -14,8 +15,13 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_CHARACTERISTICS := tablet,nosdcard
 
+ifeq ($(strip $(ANDROID_64)),true)
+DEVICE_PACKAGE_OVERLAYS := \
+    device/linaro/vexpress/overlay.v2p-aarch64
+else
 DEVICE_PACKAGE_OVERLAYS := \
     device/linaro/vexpress/overlay
+endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
         ro.nohardwaregfx=true \
