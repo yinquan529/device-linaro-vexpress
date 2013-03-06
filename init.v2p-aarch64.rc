@@ -1,8 +1,4 @@
 on init
-    export EXTERNAL_STORAGE /mnt/sdcard
-    symlink /mnt/sdcard /storage/sdcard0
-    symlink /mnt/sdcard /sdcard
-
     # mount debugfs
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
@@ -36,9 +32,6 @@ on boot
     chown system system /sys/class/graphics/fb0/overlays
     chown system system /sys/class/graphics/fb0/fit_to_screen
     chown system system /sys/class/graphics/fb1/overlays
-
-on fs
-    mount_all /fstab.v2p-aarch64
 
 service faketsd /system/bin/faketsd
     class main

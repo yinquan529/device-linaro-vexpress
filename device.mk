@@ -1,6 +1,5 @@
 PRODUCT_COPY_FILES := \
     device/linaro/common/fstab.partitions:root/fstab.arm-versatileexpress \
-    device/linaro/common/fstab.partitions:root/fstab.v2p-aarch64 \
     device/linaro/vexpress/vold.fstab:system/etc/vold.fstab \
     device/linaro/vexpress/egl.cfg:system/lib/egl/egl.cfg
 
