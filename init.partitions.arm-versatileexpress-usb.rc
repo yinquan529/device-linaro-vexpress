@@ -1,0 +1,7 @@
+on init
+    export EXTERNAL_STORAGE /mnt/sdcard
+    symlink /mnt/sdcard /storage/sdcard0
+    symlink /mnt/sdcard /sdcard
+
+on fs
+    mount_all /fstab.arm-versatileexpress-usb
