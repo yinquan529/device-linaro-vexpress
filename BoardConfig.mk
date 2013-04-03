@@ -71,7 +71,7 @@ KERNEL_CONFIG := linaro/configs/linaro-base.conf \
 DEVICE_TREES := vexpress-v2p-ca5s:v2p-ca5s.dtb \
 		vexpress-v2p-ca9:v2p-ca9.dtb \
 		vexpress-v2p-ca15-tc1:v2p-ca15-tc1.dtb \
-		vexpress-v2p-ca15-tc2:v2p-ca15-tc2.dtb \
+		vexpress-v2p-ca15_a7:v2p-ca15-tc2.dtb \
 		rtsm_ve-cortex_a9x2:rtsm/rtsm_ve-ca9x2.dtb \
 		rtsm_ve-cortex_a9x4:rtsm/rtsm_ve-ca9x4.dtb \
 		rtsm_ve-cortex_a15x1:rtsm/rtsm_ve-ca15x1.dtb \
