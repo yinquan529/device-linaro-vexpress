@@ -58,6 +58,12 @@ UBOOT_FLAVOURS := vexpress_ca5x2:u-boot.bin
 CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress/bootloader-uboot-files.mk
 INSTALLED_KERNEL_TARGET_NAME := zImage
 INSTALLED_RAMDISK_TARGET_NAME := initrd
+#
+# Exporting the kernel and uboot source path explicitly since the path
+# are not based on TARGET_PRODUCT.
+#
+TARGET_UBOOT_SOURCE := u-boot/linaro/vexpress-iks
+TARGET_KERNEL_SOURCE := kernel/linaro/vexpress-iks
 
 else
 #
