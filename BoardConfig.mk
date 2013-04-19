@@ -65,9 +65,6 @@ INSTALLED_RAMDISK_TARGET_NAME := initrd
 TARGET_UBOOT_SOURCE := u-boot/linaro/vexpress-iks
 TARGET_KERNEL_SOURCE := kernel/linaro/vexpress-iks
 
-# Disable building modules since we don't want gator to be built
-BUILD_KERNEL_MODULES := false
-
 else
 #
 # MP
