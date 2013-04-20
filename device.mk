@@ -52,4 +52,4 @@ PRODUCT_PACKAGES += audio.primary.vexpress
 $(call inherit-product-if-exists, external/linaro-android-kernel-test/product.mk)
 
 
-$(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
+$(call inherit-product-if-exists, frameworks/native/build/tablet-dalvik-heap.mk)
