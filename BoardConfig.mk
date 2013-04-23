@@ -51,7 +51,12 @@ else ifeq ($(strip $(BUILD_IKS)),true)
 # IKS
 #
 ifeq ($(KERNEL_CONFIG),)
-KERNEL_CONFIG := vexpress_bL_defconfig
+KERNEL_CONFIG := linaro/configs/linaro-base.conf \
+                 linaro/configs/android.conf \
+                 linaro/configs/big-LITTLE-MP.conf \
+                 linaro/configs/vexpress.conf \
+                 linaro/configs/vexpress-tuning.conf \
+                 linaro/configs/big-LITTLE-IKS.conf
 endif
 DEVICE_TREES := vexpress-v2p-ca15_a7:v2p-ca15-tc2.dtb
 UBOOT_FLAVOURS := vexpress_ca5x2:u-boot.bin
