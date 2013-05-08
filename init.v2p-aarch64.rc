@@ -52,6 +52,8 @@ on boot
     chown system system /sys/class/graphics/fb0/overlays
     chown system system /sys/class/graphics/fb0/fit_to_screen
     chown system system /sys/class/graphics/fb1/overlays
+    setprop debug.choreographer.vsync false
+    setprop debug.choreographer.framedelay 300
 
 service faketsd /system/bin/faketsd
     class main
