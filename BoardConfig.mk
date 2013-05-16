@@ -78,6 +78,7 @@ KERNEL_CONFIG := linaro/configs/linaro-base.conf \
                  linaro/configs/android.conf \
                  linaro/configs/big-LITTLE-MP.conf \
                  linaro/configs/vexpress.conf \
+                 linaro/configs/big-LITTLE-IKS.conf \
                  linaro/configs/vexpress-tuning.conf
 DEVICE_TREES := vexpress-v2p-ca5s:v2p-ca5s.dtb \
 		vexpress-v2p-ca9:v2p-ca9.dtb \
