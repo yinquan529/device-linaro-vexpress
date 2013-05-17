@@ -97,6 +97,7 @@ UBOOT_FLAVOURS := vexpress_ca9x4:u-boot_v2p-ca9.bin \
 CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress/bootloader.mk
 INSTALLED_KERNEL_TARGET_NAME := zImage
 INSTALLED_RAMDISK_TARGET_NAME := initrd
+INCLUDE_PERF := 0
 
 endif
 
