@@ -43,7 +43,11 @@ ifeq ($(strip $(ANDROID_64)),true)
 # Juice
 #
 KERNEL_TOOLS_PREFIX := aarch64-linux-android-
-KERNEL_CONFIG := vexpress-android_defconfig
+KERNEL_CONFIG := linaro/configs/linaro-base.conf \
+                 linaro/configs/android.conf \
+                 linaro/configs/vexpress64.conf \
+                 linaro/configs/vexpress-tuning.conf \
+                 linaro/configs/juice.conf
 CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress/bootloader64.mk
 
 else ifeq ($(strip $(BUILD_IKS)),true)
