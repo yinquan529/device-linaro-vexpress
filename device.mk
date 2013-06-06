@@ -23,6 +23,9 @@ PRODUCT_CHARACTERISTICS := tablet,nosdcard
 ifeq ($(strip $(ANDROID_64)),true)
 DEVICE_PACKAGE_OVERLAYS := \
     device/linaro/vexpress/overlay.v2p-aarch64
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sf.lcd_density=120
 else
 DEVICE_PACKAGE_OVERLAYS := \
     device/linaro/vexpress/overlay
