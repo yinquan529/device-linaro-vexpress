@@ -59,6 +59,7 @@ $(call inherit-product-if-exists, test/linaro/biglittle/core/install-scripts.mk)
 PRODUCT_PACKAGES += audio.primary.vexpress
 
 $(call inherit-product-if-exists, external/linaro-android-kernel-test/product.mk)
+$(call inherit-product-if-exists, system/extras/tests/bionic/libc/build-tests.mk)
 
 
 $(call inherit-product-if-exists, frameworks/native/build/tablet-dalvik-heap.mk)
