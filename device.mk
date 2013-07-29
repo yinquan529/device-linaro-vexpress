@@ -35,6 +35,11 @@ PRODUCT_COPY_FILES += \
 else
 DEVICE_PACKAGE_OVERLAYS := \
     device/linaro/vexpress/overlay
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	dalvik.vm.heapstartsize=16M \
+	dalvik.vm.heapmaxfree=8M \
+	dalvik.vm.heapminfree=2M
 endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
