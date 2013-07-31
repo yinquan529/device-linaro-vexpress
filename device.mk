@@ -1,5 +1,5 @@
 PRODUCT_COPY_FILES := \
-    device/linaro/common/fstab.partitions:root/fstab.arm-versatileexpress \
+    device/linaro/vexpress/fstab.arm-versatileexpress:root/fstab.arm-versatileexpress \
     device/linaro/vexpress/fstab.arm-versatileexpress-usb:root/fstab.arm-versatileexpress-usb \
     device/linaro/common/fstab.partitions:root/fstab.v2p-aarch64 \
     device/linaro/vexpress/vold.fstab:system/etc/vold.fstab \
