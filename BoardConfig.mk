@@ -50,6 +50,8 @@ KERNEL_CONFIG := linaro/configs/linaro-base.conf \
                  linaro/configs/juice.conf
 CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress/bootloader64.mk
 
+TARGET_CPU_VARIANT := cortex-a15
+
 else ifeq ($(strip $(BUILD_IKS)),true)
 #
 # IKS
@@ -73,6 +75,8 @@ INSTALLED_RAMDISK_TARGET_NAME := initrd
 #
 TARGET_UBOOT_SOURCE := u-boot/linaro/vexpress-iks
 TARGET_KERNEL_SOURCE := kernel/linaro/vexpress-iks
+
+TARGET_CPU_VARIANT := cortex-a9
 
 else
 #
@@ -102,6 +106,8 @@ CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress/bootloader.mk
 INSTALLED_KERNEL_TARGET_NAME := zImage
 INSTALLED_RAMDISK_TARGET_NAME := initrd
 INCLUDE_PERF := 0
+
+TARGET_CPU_VARIANT := cortex-a9
 
 endif
 
