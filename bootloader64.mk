@@ -9,7 +9,7 @@ $(BOOTLOADER_OUT)/linux-system.axf: $(ACP) $(INSTALLED_KERNEL_TARGET) $(INSTALLE
 	ln -sf $(abspath $(TOP)/kernel/arch/arm64/boot/dts/rtsm_ve-aemv8a.dts) $(TOP)/boot-wrapper/rtsm_ve-aemv8a.dts
 	ln -sf $(abspath $(INSTALLED_KERNEL_TARGET)) $(TOP)/boot-wrapper/Image
 	ln -sf $(abspath $(INSTALLED_RAMDISK_TARGET)) $(TOP)/boot-wrapper/filesystem.cpio.gz
-	PATH=$(abspath $(TOP)/gcc-linaro-aarch64-linux-gnu-4.7/bin):$(PATH) && \
+	PATH=$(abspath $(TOP)/gcc-linaro-aarch64-linux-gnu/bin):$(PATH) && \
 	$(MAKE) -C $(TOP)/boot-wrapper CROSS_COMPILE=$(KERNEL_TOOLS_PREFIX)
 	@mkdir -p $(dir $@)
 	$(ACP) -fpt $(TOP)/boot-wrapper/linux-system.axf $@
