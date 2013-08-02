@@ -7,4 +7,4 @@
 /dev/block/sda2    /system             ext4      ro                                                    wait
 /dev/block/sda3    /cache              ext4      noatime,nosuid,nodev,nomblk_io_submit,errors=panic    wait
 /dev/block/sda5    /data               ext4      noatime,nosuid,nodev,nomblk_io_submit,errors=panic    wait
-/dev/block/sda6    /mnt/sdcard         vfat      defaults                                              voldmanaged=sdcard:auto
+/block/sda/device  /mnt/sdcard         vfat      defaults                                              voldmanaged=sdcard:6
