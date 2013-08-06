@@ -43,7 +43,7 @@ ifeq ($(strip $(ANDROID_64)),true)
 # Juice
 #
 KERNEL_TOOLS_PREFIX := aarch64-linux-android-
-KERNEL_CONFIG := linaro/configs/linaro-base.conf \
+KERNEL_CONFIG ?= linaro/configs/linaro-base.conf \
                  linaro/configs/android.conf \
                  linaro/configs/vexpress64.conf \
                  linaro/configs/vexpress-tuning.conf \
@@ -57,7 +57,7 @@ else ifeq ($(strip $(BUILD_IKS)),true)
 # IKS
 #
 ifeq ($(KERNEL_CONFIG),)
-KERNEL_CONFIG := linaro/configs/linaro-base.conf \
+KERNEL_CONFIG ?= linaro/configs/linaro-base.conf \
                  linaro/configs/android.conf \
                  linaro/configs/big-LITTLE-MP.conf \
                  linaro/configs/vexpress.conf \
@@ -82,7 +82,7 @@ else
 #
 # MP
 #
-KERNEL_CONFIG := linaro/configs/linaro-base.conf \
+KERNEL_CONFIG ?= linaro/configs/linaro-base.conf \
                  linaro/configs/android.conf \
                  linaro/configs/big-LITTLE-MP.conf \
                  linaro/configs/vexpress.conf \
