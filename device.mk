@@ -28,7 +28,8 @@ DEVICE_PACKAGE_OVERLAYS := \
     device/linaro/vexpress/overlay.v2p-aarch64
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=120
+    ro.sf.lcd_density=120 \
+    ro.disablesuspend=true
 
 PRODUCT_COPY_FILES += \
     device/linaro/vexpress/init.v2p-aarch64.sh:system/etc/init.v2p-aarch64.sh
