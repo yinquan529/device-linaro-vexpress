@@ -83,6 +83,7 @@ else
 #
 # MP
 #
+include $(TOPDIR)device/linaro/common/linaro_configs.mk
 KERNEL_CONFIG ?= linaro/configs/linaro-base.conf \
                  linaro/configs/android.conf \
                  linaro/configs/big-LITTLE-MP.conf \
