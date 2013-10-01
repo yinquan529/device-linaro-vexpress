@@ -1,0 +1,60 @@
+on init
+    # mount debugfs
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
+
+    # See storage config details at http://source.android.com/tech/storage/
+    mkdir /mnt/shell/emulated 0700 shell shell
+    mkdir /storage/emulated 0555 root root
+
+    export EXTERNAL_STORAGE /storage/emulated/legacy
+    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
+    export EMULATED_STORAGE_TARGET /storage/emulated
+
+    # Support legacy paths
+    symlink /storage/emulated/legacy /sdcard
+    symlink /storage/emulated/legacy /mnt/sdcard
+    symlink /storage/emulated/legacy /storage/sdcard0
+    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
+
+on post-fs-data
+    mkdir /data/media 0770 media_rw media_rw
+
+on fs
+    mount_all /fstab.fvpbase
+
+# power management
+# Enable off mode by default
+    #write /sys/kernel/debug/pm_debug/enable_off_mode 1
+
+on boot
+    # For TC2, set A15s to performance and A7s to ondemand
+    # (Other CoreTiles don't have cpu_freq so this doesn't affect them.)
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor performance
+    write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor ondemand
+
+    # change permissions for alsa nodes
+    chmod 0777 /dev/snd/pcmC0D0c
+    chmod 0777 /dev/snd/pcmC0D0p
+    chmod 0777 /dev/snd/controlC0
+    chmod 0777 /dev/snd/timer
+
+    #change permissions for alsa nodes for audio modem
+    chmod 0777 /dev/snd/pcmC0D5c
+    chmod 0777 /dev/snd/pcmC0D5p
+
+    #change permissions for alsa nodes for HDMI
+    chmod 777  /dev/snd/pcmC0D7p
+
+    chown system system /sys/class/graphics/fb0/overlays
+    chown system system /sys/class/graphics/fb0/fit_to_screen
+    chown system system /sys/class/graphics/fb1/overlays
+
+service faketsd /system/bin/faketsd
+    class main
+    user bluetooth
+    group bluetooth
+    oneshot
+
+# virtual sdcard daemon running as media_rw (1023)
+service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated 1023 1023
+    class late_start
