@@ -16,6 +16,10 @@ on init
     symlink /storage/emulated/legacy /storage/sdcard0
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
 
+    # Disabled virtual memory randomization
+    # (if randomization is enabled the AEM-JIT will have a lower cache hit rate)
+    write /proc/sys/kernel/randomize_va_space 0
+
 on post-fs-data
     mkdir /data/media 0770 media_rw media_rw
 
@@ -48,6 +52,17 @@ on boot
     chown system system /sys/class/graphics/fb0/overlays
     chown system system /sys/class/graphics/fb0/fit_to_screen
     chown system system /sys/class/graphics/fb1/overlays
+
+    # Disable bootanimation to speed up boot
+    setprop ro.kernel.android.bootanim 0
+    setprop debug.sf.nobootanimation 1
+
+    setprop ro.test_harness true
+    # See http://www.netmite.com/android/mydroid/2.0/dalvik/docs/embedded-vm-control.html
+    # Disable verification, should speed things up
+    setprop dalvik.vm.dexopt-flags v=n
+    # Disable extended JNI checks, should speed things up
+    setprop dalvik.vm.checkjni false
 
 service faketsd /system/bin/faketsd
     class main
