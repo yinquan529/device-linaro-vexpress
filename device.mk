@@ -31,7 +31,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=120 \
     ro.disablesuspend=true
 
-PRODUCT_COPY_FILES := \
+PRODUCT_COPY_FILES += \
     device/linaro/vexpress/init.fvpbase.rc:root/init.fvpbase.rc \
     device/linaro/vexpress/fstab.fvpbase:root/fstab.fvpbase \
     device/linaro/vexpress/ueventd.fvpbase.rc:root/ueventd.fvpbase.rc
