@@ -13,7 +13,6 @@ $(BOOTLOADER_OUT)/linux-system.axf: $(ACP) $(INSTALLED_KERNEL_TARGET) $(INSTALLE
 	$(MAKE) -C $(TOP)/boot-wrapper CROSS_COMPILE=$(KERNEL_TOOLS_PREFIX)
 	@mkdir -p $(dir $@)
 	$(ACP) -fpt $(TOP)/boot-wrapper/linux-system.axf $@
-	rm $(TOP)/boot-wrapper/dtc
 	rm $(TOP)/boot-wrapper/vexpress-v2p-aarch64.dts
 	rm $(TOP)/boot-wrapper/vexpress-v2m-rs1.dtsi
 	rm $(TOP)/boot-wrapper/skeleton.dtsi
@@ -32,6 +31,5 @@ $(BOOTLOADER_OUT)/fvp-base-gicv2-psci-android.dtb: $(ACP) $(INSTALLED_KERNEL_TAR
 	$(ACP) -fpt $(TOP)/boot-wrapper/fvp-base-gicv2-psci-android.dtb $@
 	rm $(TOP)/boot-wrapper/fvp-base-gicv2-psci-android.dtb
 	rm $(TOP)/boot-wrapper/fvp-base-gicv2-psci-android.dts
-	rm $(TOP)/boot-wrapper/dtc
 
 BOOTLOADER_TARGETS += $(BOOTLOADER_OUT)/linux-system.axf
