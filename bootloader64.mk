@@ -22,8 +22,8 @@ $(BOOTLOADER_OUT)/linux-system.axf: $(ACP) $(INSTALLED_KERNEL_TARGET) $(INSTALLE
 	rm $(TOP)/boot-wrapper/rtsm_ve-aemv8a.dts
 	rm $(TOP)/boot-wrapper/rtsm_ve-motherboard.dtsi
 
-$(BOOTLOADER_OUT)/fvp-base-gicv2-psci.dtb: $(TOP)/$(TARGET_KERNEL_SOURCE)/arch/arm64/boot/dts/fvp-base-gicv2-psci-android.dts $(INSTALLED_KERNEL_TARGET)
-	$(KERNEL_OUT)/scripts/dtc/dtc -I dts -O dtb -o $@ $<
+$(BOOTLOADER_OUT)/fvp-base-gicv2-psci.dtb: $(abspath $(TOP)/$(TARGET_KERNEL_SOURCE)/arch/arm64/boot/dts/fvp-base-gicv2-psci-android.dts) $(INSTALLED_KERNEL_TARGET)
+	$(abspath $(KERNEL_OUT)/scripts/dtc/dtc) -I dts -O dtb -o $@ $<
 
 BOOTLOADER_TARGETS += $(BOOTLOADER_OUT)/linux-system.axf
 BOOTLOADER_TARGETS += $(BOOTLOADER_OUT)/fvp-base-gicv2-psci.dtb
