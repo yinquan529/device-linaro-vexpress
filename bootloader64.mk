@@ -25,5 +25,8 @@ $(BOOTLOADER_OUT)/linux-system.axf: $(ACP) $(INSTALLED_KERNEL_TARGET) $(INSTALLE
 $(BOOTLOADER_OUT)/fvp-base-gicv2-psci.dtb: $(abspath $(TOP)/$(TARGET_KERNEL_SOURCE)/arch/arm64/boot/dts/fvp-base-gicv2-psci-android.dts) $(INSTALLED_KERNEL_TARGET)
 	$(abspath $(KERNEL_OUT)/scripts/dtc/dtc) -I dts -O dtb -o $@ $<
 
+$(eval $(call MAKE_EDK2_ROM,ArmPlatformPkg/ArmVExpressPkg/ArmVExpress-FVP-AArch64.dsc,fvp-base,FVP_AARCH64_EFI,uefi_fvp-base.bin,AARCH64))
+
 BOOTLOADER_TARGETS += $(BOOTLOADER_OUT)/linux-system.axf
 BOOTLOADER_TARGETS += $(BOOTLOADER_OUT)/fvp-base-gicv2-psci.dtb
+BOOTLOADER_TARGETS += $(BOOTLOADER_OUT)/uefi_fvp-base.bin
