@@ -64,6 +64,13 @@ on boot
     # Disable extended JNI checks, should speed things up
     setprop dalvik.vm.checkjni false
 
+# current fast models do not emulate RTC
+# set a decent date and time to make sure dependent application (CTS tests in particular) do not fail
+service fvpbase_setup /system/etc/init.fvpbase.sh
+    class core
+    user root
+    oneshot
+
 service faketsd /system/bin/faketsd
     class main
     user bluetooth

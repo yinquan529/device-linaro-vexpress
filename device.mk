@@ -34,7 +34,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
     device/linaro/vexpress/init.fvpbase.rc:root/init.fvpbase.rc \
     device/linaro/vexpress/fstab.fvpbase:root/fstab.fvpbase \
-    device/linaro/vexpress/ueventd.fvpbase.rc:root/ueventd.fvpbase.rc
+    device/linaro/vexpress/ueventd.fvpbase.rc:root/ueventd.fvpbase.rc \
+    device/linaro/vexpress/init.fvpbase.sh:system/etc/init.fvpbase.sh
 else
 DEVICE_PACKAGE_OVERLAYS := \
     device/linaro/vexpress/overlay
