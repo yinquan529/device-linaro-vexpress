@@ -26,6 +26,9 @@ on post-fs-data
 on fs
     mount_all /fstab.fvpbase
 
+    # See storage config details at http://source.android.com/tech/storage/
+    setprop ro.crypto.fuse_sdcard true
+
 # power management
 # Enable off mode by default
     #write /sys/kernel/debug/pm_debug/enable_off_mode 1
@@ -35,6 +38,10 @@ on boot
     # (Other CoreTiles don't have cpu_freq so this doesn't affect them.)
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor performance
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor ondemand
+
+    # change permissions for process groups
+    # https://bugs.launchpad.net/bugs/1037611
+    chmod 0660 /dev/cpuctl
 
     # change permissions for alsa nodes
     chmod 0777 /dev/snd/pcmC0D0c
@@ -64,11 +71,14 @@ on boot
     # Disable extended JNI checks, should speed things up
     setprop dalvik.vm.checkjni false
 
-# current fast models do not emulate RTC
-# set a decent date and time to make sure dependent application (CTS tests in particular) do not fail
-service fvpbase_setup /system/etc/init.fvpbase.sh
-    class core
-    user root
+    # Setup paths used for socket communication with the dhcp daemon (dhcpd)
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    chown dhcp dhcp /data/misc/dhcp
+
+service dhcpcd_eth0 /system/bin/dhcpcd -dABKL
+    class main
+    group dhcp
+    disabled
     oneshot
 
 service faketsd /system/bin/faketsd
@@ -78,5 +88,5 @@ service faketsd /system/bin/faketsd
     oneshot
 
 # virtual sdcard daemon running as media_rw (1023)
-service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated 1023 1023
+service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
     class late_start
