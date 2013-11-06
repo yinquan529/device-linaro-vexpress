@@ -25,11 +25,24 @@ PRODUCT_CHARACTERISTICS := tablet,nosdcard
 
 ifeq ($(strip $(ANDROID_64)),true)
 DEVICE_PACKAGE_OVERLAYS := \
-    device/linaro/vexpress/overlay.v2p-aarch64
+    device/linaro/vexpress/overlay.fvpbase
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=120 \
     ro.disablesuspend=true
+
+# Device configuration to tune down device's memory use
+# without going to the point of causing applications to
+# turn off features.
+# It also avoid using accelerated graphics in certain
+# places to reduce RAM footprint so we do not need to set
+# "config_avoidGfxAccel" overlay config.
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.low_ram=true
+
+# Disable JIT
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.jit.codecachesize=0
 
 PRODUCT_COPY_FILES += \
     device/linaro/vexpress/init.fvpbase.rc:root/init.fvpbase.rc \
