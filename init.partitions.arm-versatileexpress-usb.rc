@@ -1,7 +1,13 @@
 on init
-    export EXTERNAL_STORAGE /mnt/sdcard
-    symlink /mnt/sdcard /storage/sdcard0
-    symlink /mnt/sdcard /sdcard
+    mkdir /mnt/media_rw/sdcard0 0700 media_rw media_rw
+    mkdir /storage/sdcard0 0700 root root
+
+    export EXTERNAL_STORAGE /storage/sdcard0
+    symlink /storage/sdcard0 /sdcard
+
+service fuse_sdcard0 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard0 /storage/sdcard0
+    class late_start
+    disabled
 
 on fs
     mount_all /fstab.arm-versatileexpress-usb
