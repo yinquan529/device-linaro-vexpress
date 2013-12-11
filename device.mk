@@ -16,6 +16,7 @@ PRODUCT_COPY_FILES += \
     device/linaro/vexpress/init.vexpress.sh:system/etc/init.vexpress.sh \
     device/linaro/vexpress/initlogo.rle:root/initlogo.rle \
     device/linaro/vexpress/set_irq_affinity.sh:root/sbin/set_irq_affinity.sh \
+    device/linaro/vexpress/tweaks.arm-versatileexpress.sh:root/sbin/tweaks.arm-versatileexpress.sh \
     device/linaro/common/android.hardware.screen.xml:system/etc/permissions/android.hardware.screen.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml
