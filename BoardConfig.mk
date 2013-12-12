@@ -48,8 +48,9 @@ KERNEL_CONFIG ?= linaro/configs/linaro-base.conf \
                  linaro/configs/vexpress64.conf \
                  linaro/configs/vexpress-tuning.conf \
                  linaro/configs/juice.conf
-CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress/bootloader64.mk
+CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress/bootloader.mk
 TARGET_KERNEL_SOURCE ?= kernel/linaro/juice
+DEVICE_TREES := fvp-base-gicv2-psci:fdt.dtb
 
 TARGET_CPU_VARIANT := cortex-a15
 
