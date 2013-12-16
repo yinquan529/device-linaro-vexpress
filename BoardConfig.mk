@@ -50,7 +50,7 @@ KERNEL_CONFIG ?= linaro/configs/linaro-base.conf \
                  linaro/configs/juice.conf
 CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress/bootloader.mk
 TARGET_KERNEL_SOURCE ?= kernel/linaro/juice
-DEVICE_TREES := fvp-base-gicv2-psci:fdt.dtb
+DEVICE_TREES := fvp-base-gicv2-psci:fvp-base-gicv2-psci.dtb
 
 TARGET_CPU_VARIANT := cortex-a15
 
