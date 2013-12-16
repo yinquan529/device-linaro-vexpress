@@ -46,6 +46,7 @@ KERNEL_TOOLS_PREFIX := aarch64-linux-android-
 KERNEL_CONFIG ?= linaro/configs/linaro-base.conf \
                  linaro/configs/android.conf \
                  linaro/configs/vexpress64.conf \
+                 linaro/configs/big-LITTLE-MP.conf \
                  linaro/configs/vexpress-tuning.conf \
                  linaro/configs/juice.conf
 CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress/bootloader.mk
