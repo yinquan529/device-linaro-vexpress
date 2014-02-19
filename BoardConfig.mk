@@ -52,7 +52,7 @@ KERNEL_CONFIG ?= linaro/configs/linaro-base.conf \
 CUSTOM_BOOTLOADER_MAKEFILE := device/linaro/vexpress/bootloader.mk
 TARGET_KERNEL_SOURCE ?= kernel/linaro/juice
 ifneq ($(wildcard $(TOP)/kernel/linaro/juice),)
-DEVICE_TREES := fvp-base-gicv2-psci-android:fvp-base-gicv2-psci.dtb fvp-base-gicv2-psci-android:fdt.dtb
+DEVICE_TREES := fvp-base-gicv2-psci:fvp-base-gicv2-psci.dtb fvp-base-gicv2-psci:fdt.dtb
 else
 DEVICE_TREES := fvp-base-gicv2-psci:fvp-base-gicv2-psci.dtb fvp-base-gicv2-psci:fdt.dtb
 endif
