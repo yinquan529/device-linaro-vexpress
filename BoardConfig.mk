@@ -42,7 +42,7 @@ ifeq ($(strip $(ANDROID_64)),true)
 #
 # Juice
 #
-KERNEL_TOOLS_PREFIX := gcc-linaro-aarch64-linux-gnu/bin/aarch64-linux-android-
+KERNEL_TOOLS_PREFIX := $(realpath $(TOP))/gcc-linaro-aarch64-linux-gnu/bin/aarch64-linux-android-
 KERNEL_CONFIG ?= linaro/configs/linaro-base.conf \
                  linaro/configs/android.conf \
                  linaro/configs/vexpress64.conf \
