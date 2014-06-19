@@ -5,6 +5,6 @@
 
 
 /dev/block/mmcblk0p2    /system             ext4      ro                                                    wait
-/dev/block/mmcblk0p3    /cache              ext4      noatime,nosuid,nodev,nomblk_io_submit,errors=panic    wait
 /dev/block/mmcblk0p5    /data               ext4      noatime,nosuid,nodev,nomblk_io_submit,errors=panic    wait
+/dev/block/mmcblk0p3    /cache              ext4      noatime,nosuid,nodev,nomblk_io_submit,errors=panic    wait
 /block/mmcblk0/device   auto                vfat      defaults                                              voldmanaged=sdcard0:6,noemulatedsd
