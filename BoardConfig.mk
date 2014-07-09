@@ -97,7 +97,7 @@ KERNEL_CONFIG ?= linaro/configs/linaro-base.conf \
                  linaro/configs/big-LITTLE-IKS.conf \
                  linaro/configs/vexpress-tuning.conf
 
-ifeq ($(KERNEL_SRC),kernel/linaro/vexpress-lsk)
+ifeq ($(TARGET_KERNEL_SOURCE),kernel/linaro/vexpress-lsk)
 DEVICE_TREES := vexpress-v2p-ca5s:v2p-ca5s.dtb \
                 vexpress-v2p-ca9:v2p-ca9.dtb \
                 vexpress-v2p-ca15-tc1:v2p-ca15-tc1.dtb \
